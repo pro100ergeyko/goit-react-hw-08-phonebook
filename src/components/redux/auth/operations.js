@@ -10,7 +10,6 @@ const register = createAsyncThunk(
       const resp = await contactsAPI.registerUser(credential);
       contactsAPI.setAuthHeader(resp.data.token);
       toastSuccess('You are successfully registered in the system 👍');
-
       return resp.data;
     } catch (error) {
       toastError('Something went wrong, please try again 😵');
